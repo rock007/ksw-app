@@ -1,12 +1,20 @@
-# react-winjs Address Book
+# ksw-app
 
-This example demonstrates using `react-winjs` components to build an adaptive app for managing an address book. It works well at mobile, tablet, and desktop screen sizes. See it in action [here](http://winjs.github.io/react-winjs/examples/address-book/index.html).
+react-win.js库演示
 
 ## Usage
 
 ```
+
 npm install
-npm start
+
+##安装grunt 
+npm install grunt --save-dev
+
+##reactjs loader
+npm install --save-dev jsx-loader
+
+grunt run
 ```
 
-Open `index.html` in your browser.
+Open `index.html` in your browser with http://localhost:8000.
