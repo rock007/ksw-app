@@ -179,3 +179,10 @@
 .profileContent .mapIcon::before {
     content: "\E139";
 }
+
+.circle-holder{
+    text-align:center
+}
+.circle{
+    margin:0 auto;  
+}

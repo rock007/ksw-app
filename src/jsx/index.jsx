@@ -6,7 +6,10 @@ var React = require('react');
 var ReactWinJS = require('react-winjs');
 var PeoplePage = require('./PeoplePage.jsx');
 var OtherPage = require('./OtherPage.jsx');
+var ChartPage = require('./ChartPage.jsx');
+
 var ProfilePicture = require('./ProfilePicture.jsx');
+
 var Data = require('fakeData.js');
 
 //var Data=path.join(__dirname, 'FakeData.js');
@@ -77,6 +80,7 @@ var App = React.createClass({
         }
     },
     handleCommandInvoked: function (newLocation) {
+
         this.setState({
             location: newLocation,
             paneOpened: this.getSplitViewConfig().openedDisplayMode === "overlay" ? false : this.state.paneOpened
@@ -138,9 +142,18 @@ var App = React.createClass({
     renderOtherPage: function () {
         return <OtherPage location={this.state.location} />
     },
+    renderChartPage:function(){
+        
+        return <ChartPage location={this.state.location} />
+
+    },
     renderContent: function () {
         if (this.state.location.length === 0 || this.state.location[0] === "people") {
             return this.renderPeoplePage();
+        }else if(this.state.location[0] === "chart"){
+            
+            return this.renderChartPage();
+
         } else {
             return this.renderOtherPage();
         }
@@ -169,6 +182,11 @@ var App = React.createClass({
                     onInvoked={this.handleCommandInvoked.bind(null, ["groups"])} />
 
                 <ReactWinJS.SplitView.Command
+                    label="图表测试"
+                    icon="people"
+                    onInvoked={this.handleCommandInvoked.bind(null, ["chart"])} />
+
+                <ReactWinJS.SplitView.Command
                     style={{position: "absolute", bottom: 0, width: "100%"}}
                     label="Settings"
                     icon="settings"
@@ -187,7 +205,7 @@ var App = React.createClass({
                         paneOpened={this.state.paneOpened}
                         onInvoked={this.handleTogglePane} />
                     {this.renderBackButton()}
-                    <h3 className="win-h3" style={{display: "inline-block", marginLeft: 5}}>Address Book</h3>
+                    <h3 className="win-h3" style={{display: "inline-block", marginLeft: 5}}>中午好</h3>
                 </div>
                 <ReactWinJS.SplitView
                     id={splitViewId}

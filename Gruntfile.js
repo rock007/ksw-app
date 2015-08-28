@@ -73,13 +73,13 @@ cache: true,
         'react': 'React',
         'react/addons': 'React'
     },
-    watch: false, // use webpacks watcher
+    watch: true, // use webpacks watcher
     // You need to keep the grunt process alive
 
-    keepalive: false, // don't finish the grunt task
+    keepalive: true, // don't finish the grunt task
     // Use this in combination with the watch option
 
-    inline: false  // embed the webpack-dev-server runtime into the bundle
+    inline: true  // embed the webpack-dev-server runtime into the bundle
     // Defaults to false
 
   }
@@ -103,7 +103,7 @@ cache: true,
 
       grunt.registerTask('compile', ['typescript:base','react','webpack']);
       
-      grunt.registerTask('run', ['webpack','connect']);
+      grunt.registerTask('run', ['connect']);
 
       grunt.registerTask('package', ['webpack']);
       
