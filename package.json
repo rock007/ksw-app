@@ -1,0 +1,26 @@
+{
+  "name": "ksw-h5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sam_lucky@163.com",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^0.13.3",
+    "react-winjs": ""
+  },
+  "devDependencies": {
+    "grunt": "~0.4.0",
+    "grunt-contrib-concat": "~0.1.1",
+    "grunt-contrib-connect": "^0.9.0",
+    "grunt-contrib-jshint": "~0.1.1",
+    "grunt-contrib-uglify": "~0.1.2",
+    "grunt-react": "",
+    "grunt-typescript": "",
+    "grunt-webpack": "",
+    "jsx-loader": "^0.13.2"
+  }
+}
