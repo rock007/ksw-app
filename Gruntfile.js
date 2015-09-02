@@ -101,7 +101,7 @@ cache: true,
       // 注册任务 ,'concat','uglify'
       grunt.registerTask('default', ['typescript:base','react','concat']);
 
-      grunt.registerTask('compile', ['typescript:base','react','webpack']);
+      grunt.registerTask('compile', ['typescript:base','react']);
       
       grunt.registerTask('run', ['connect']);
 

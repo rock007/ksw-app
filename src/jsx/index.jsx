@@ -15,7 +15,6 @@ var Data = require('fakeData.js');
 //var Data=path.join(__dirname, 'FakeData.js');
 
 
-
 var splitViewId = "rootSplitView";
 
 var splitViewConfigs = {
@@ -81,6 +80,7 @@ var App = React.createClass({
     },
     handleCommandInvoked: function (newLocation) {
 
+        console.log("menu click"+newLocation);
         this.setState({
             location: newLocation,
             paneOpened: this.getSplitViewConfig().openedDisplayMode === "overlay" ? false : this.state.paneOpened
@@ -128,6 +128,7 @@ var App = React.createClass({
     },
     componentWillUnmount: function () {
         window.removeEventListener("resize", this.handleResize);
+        
     },
     renderPeoplePage: function () {
         return (
@@ -148,6 +149,8 @@ var App = React.createClass({
 
     },
     renderContent: function () {
+
+        console.log("render content page");
         if (this.state.location.length === 0 || this.state.location[0] === "people") {
             return this.renderPeoplePage();
         }else if(this.state.location[0] === "chart"){
@@ -166,6 +169,8 @@ var App = React.createClass({
             null;
     },
     render: function () {
+
+        console.log("render page");
         var paneComponent = (
             <div>
                 <ReactWinJS.SplitView.Command
